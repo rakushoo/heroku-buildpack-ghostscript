@@ -1,18 +1,11 @@
-# Heroku Buildpack for Ghostscript
+Ghostscriptのv9.21をインストールするbuildpackです。
 
-Currently installs Ghostscript 9.23 on Heroku.
+Ghostscriptのv9.26やv9.23だとPDFから画像に変換する際にエラーが出るケースがあるため、v9.21をインストールするようにしています。
 
-## Install
+詳細はpivotalを参照してください。
+https://www.pivotaltracker.com/story/show/170967144
 
-    # Use heroku-buildpack-multi
-    $ cd /path/to/your-app
-    $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+fork元はこちらのリポジトリです。
+https://github.com/thegrizzlylabs/heroku-buildpack-ghostscript
 
-    # Create a .buildpacks file with including ghostscript
-    $ cd /path/to/your-app
-    $ cat .buildpacks
-    https://github.com/heroku/heroku-buildpack-ruby.git
-    https://github.com/bvirlet/heroku-buildpack-ghostscript.git
 
-    # Push changes to deploy
-    $ git push
