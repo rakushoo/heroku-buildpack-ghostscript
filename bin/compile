@@ -12,6 +12,11 @@ mkdir -p $LOCATION
 curl $PACKAGE -s -o - | tar xzf - -C $LOCATION
 mv $LOCATION/$BINARY $LOCATION/gs
 
+echo "-----> Replace gs for music21"
+cd $BUILD_DIR/lilypond/usr/bin/
+mv gs gs_original
+ln -s /app/vendor/gs/bin/gs gs 
+
 echo "-----> Building runtime environment for Ghostscript"
 
 mkdir -p $BUILD_DIR/.profile.d
