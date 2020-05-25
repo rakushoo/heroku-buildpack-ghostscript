@@ -1,8 +1,8 @@
-## 目的
+# 目的
 Music21をHeroku環境で動作させるために必要な、
 Ghostscriptのv9.21をインストールするbuildpackです。
 
-# 詳細
+# 注意
 Music21をHeroku環境で動作させるためには、  
 LilyPondとGhostscriptが必要になります。
 
@@ -14,7 +14,7 @@ LilyPond内のgsバイナリはv9.26なのですが、なぜかgs_init.psに対�
 そのため、このbuildpackではgsのインストールに加えて、LilyPond内のgsファイルを置き換える処理をしています。
 事前にLilyPondがインストールされている前提で動作するのでご注意ください。
 
-# Usage
-Step 1: Heroku Dashboard -> -> Settings -> Buildpacks の Add buildpack にリポジトリを追加
+# 使用方法
+Step 1: Heroku Dashboard -> (App name) -> Settings -> Buildpacks の Add buildpack を押下してリポジトリを追加
 Step 2: コマンドラインから環境変数を追加
 $> heroku config:add BUILDPACK_URL=https://github.com/rakushoo/heroku-buildpack-ghostscript.git
